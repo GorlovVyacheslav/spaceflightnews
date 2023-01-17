@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { getSpaceflightArticle } from '../../../api/spaceflight.api';
 import { Article } from '../../types/Article';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useKeywordFilter } from '../../../state/articles.state';
+
 
 import { Button } from '@mui/material';
 import './Article.css';
