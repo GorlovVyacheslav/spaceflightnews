@@ -14,7 +14,7 @@ npm install
 npm start
 
 
- Deployed to free tier of netlify: link
+ Deployed to free tier of netlify: horlovspaceflightnews.netlify.app
 
 
 ## Task
