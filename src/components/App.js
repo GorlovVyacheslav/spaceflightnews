@@ -6,6 +6,15 @@ import {
   useKeywordFilter,
   useSpaceFlightNewsActions,
 } from '../state/articles.state';
+import { ThemeProvider, createTheme } from '@mui/material';
+import ErrorMessage from './errorMessage/ErrorMessage';
+
+
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Montserrat',
+  },
+});
 
 const App = () => {
   const keyword = useKeywordFilter();
@@ -33,6 +42,7 @@ const App = () => {
       <div className="line"></div>
 
       <main className="content">
+      <ThemeProvider theme={theme}>
         <Routes>
           <Route path="/">
             <Route
@@ -52,7 +62,8 @@ const App = () => {
               element={<NoMatch />}
             />
           </Route>
-        </Routes>
+          </Routes>
+          </ThemeProvider>
       </main>
     </>
   );
@@ -61,10 +72,9 @@ const App = () => {
 function NoMatch() {
   return (
     <div>
-      <h2>Nothing to see here!</h2>
-      <p>
-        <Link to="/"><button>sdasd</button></Link>
-      </p>
+    <ErrorMessage/>
+   <Link to="/"><button>Back to main page</button></Link>
+      
     </div>
   );
 }

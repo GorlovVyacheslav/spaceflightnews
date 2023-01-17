@@ -88,3 +88,7 @@ body {
   margin: 15px 0px 15px 20px;
   padding: 0px;
 }
+input.search-txt{
+  background: url(../../src/resources/img/Vector.jpg) no-repeat center left;
+  padding-left:30px;
+}

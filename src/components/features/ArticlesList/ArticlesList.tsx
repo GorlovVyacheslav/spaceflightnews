@@ -16,9 +16,9 @@ import {
   Button,
   CardActionArea,
   CardActions,
-  ThemeProvider,
-  createTheme,
+ 
 } from '@mui/material';
+import moment from 'moment';
 
 const ArrowSvg = () => {
   return (
@@ -49,13 +49,10 @@ function LinkRouter(props: any) {
   );
 }
 
-const theme = createTheme({
-  typography: {
-    fontFamily: 'Montserrat',
-  },
-});
 
-type ArticlesListItemProps = {};
+
+type ArticlesListItemProps = {
+};
 const ArticlesListItem = ({
   imageUrl,
   title,
@@ -64,6 +61,9 @@ const ArticlesListItem = ({
   publishedAt,
 }: any) => {
   const trimmedSummary = summary.slice(0, 136) + '...';
+  let Data = publishedAt 
+  let newData = moment.utc(Data).format("MMM Do, YYYY")
+  
 
   return (
     <Card
@@ -77,36 +77,38 @@ const ArticlesListItem = ({
           image={imageUrl}
           alt="abyss"
         />
-     
-        <div> {publishedAt}</div>
-        <ThemeProvider theme={theme}>
+        <div>{newData}</div>
+    
           <CardContent>
             <Typography
-              gutterBottom
               component="div"
-              margin={0}
               width={350}
               height={58}
-              fontSize={24}
+            fontSize={24}
+            lineHeight={1.2}
             >
               {title}
             </Typography>
             <Typography
-              variant="body2"
-              color="text.secondary"
-              marginTop={10}
-              fontSize={16}
+            variant="body2"
+            color="text.secondary"
+            marginTop={8}
+            marginBottom={-1.5}
+            fontSize={16}
+            width={350}
+            height={96}
+                 
             >
               {trimmedSummary}
             </Typography>
           </CardContent>
-        </ThemeProvider>
+        
       </CardActionArea>
       <CardActions>
         <Button
           className="btn"
           size="small"
-          color="primary"
+           color="primary"
           variant="text"
           endIcon={<ArrowSvg />}
         >
