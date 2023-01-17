@@ -97,13 +97,13 @@ export const ArticlesList = () => {
   const { getArticles } = useSpaceFlightNewsActions();
   const numberOfFilteredArticles = useNumberOfFilteredArticles();
 
-  useEffect(() => {
-    const initializeArticles = async () => {
+  useEffect(() =>  {
+    const initializeArticles = async () =>{
       await getArticles();
     };
 
     initializeArticles();
-  }, []);
+  }, [articles]);
 
   return (
     <>
