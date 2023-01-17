@@ -1,24 +1,21 @@
+import './style/style.scss';
+
 import React from 'react';
-import ReactDOM from 'react-dom';
+import App from './components/App';
+import { ThemeProvider } from '@mui/material';
+import { theme } from './theme';
 import { BrowserRouter } from 'react-router-dom';
 
-import './style/style.scss';
-import App from './components/App';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { createRoot } from 'react-dom/client';
+const container = document.getElementById('root');
+const root = createRoot(container!);
 
-export const theme = createTheme({
-  typography: {
-    fontFamily: 'Montserrat',
-  },
-});
-
-ReactDOM.render(
+root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-    <BrowserRouter>
-      <App />
+      <BrowserRouter>
+        <App />
       </BrowserRouter>
-      </ThemeProvider>
+    </ThemeProvider>
   </React.StrictMode>,
-  document.getElementById('root'),
 );

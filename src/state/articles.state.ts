@@ -46,3 +46,49 @@ export const useArticles = () =>
 
 export const useKeywordFilter = () =>
   useSpaceFlightNewsState((state) => state.keywordFilter);
+
+// TODO: add proper separator
+const WORD_SEPARATOR = /[\W_'’]+/;
+export const useKeywordWords = () => {
+  const keywordFilter = useKeywordFilter();
+  const splittedKeyword = keywordFilter.split(WORD_SEPARATOR);
+
+  return splittedKeyword.filter(Boolean);
+};
+
+export const useFilteredArticles = () => {
+  const articles = useArticles();
+  const keywordWords = useKeywordWords();
+
+  if (!keywordWords.length) {
+    return articles;
+  }
+
+  const filteredArticles = articles.filter((article) => {
+    const articlesSummaryWords = toLowerCaseInArray(
+      article.summary.split(WORD_SEPARATOR),
+    );
+    const articlesTitleWords = toLowerCaseInArray(
+      article.title.split(WORD_SEPARATOR),
+    );
+
+    return keywordWords.some((keyword) => {
+      return (
+        articlesSummaryWords.includes(keyword) ||
+        articlesTitleWords.includes(keyword)
+      );
+    });
+  });
+
+  return filteredArticles;
+};
+
+export const useNumberOfFilteredArticles = () => {
+  const filtered = useFilteredArticles();
+
+  return filtered.length;
+};
+
+const toLowerCaseInArray = (array: string[] = []) => {
+  return array.map((item) => item.toLowerCase());
+};

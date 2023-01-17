@@ -1,6 +1,6 @@
 body {
   width: 1440px;
-  height: 1408px;
+  height: 100%;
 
   background: #ffffff;
 
@@ -20,20 +20,15 @@ body {
   flex: none;
   order: 0;
   flex-grow: 0;
-  padding: 0px;
+  padding: 0;
 }
 .search-box {
   box-sizing: border-box;
   position: absolute;
   width: 600px;
   height: 50px;
-  margin: 10px 765px 0px 75px;
-  padding: 0px;
-
-  background: #ffffff;
-  border: 1px solid #eaeaea;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
-  border-radius: 5px;
+  margin: 10px 765px 0 75px;
+  padding: 0;
 }
 .search-txt {
   width: 336px;
@@ -88,7 +83,6 @@ body {
   margin: 15px 0px 15px 20px;
   padding: 0px;
 }
-input.search-txt{
-  background: url(../../src/resources/img/Vector.jpg) no-repeat center left;
-  padding-left:30px;
+input.search-txt {
+  padding-left: 30px;
 }
