@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import moment from 'moment';
 
+
 import './ArticlesList.scss';
 import { Link } from 'react-router-dom';
 import {
@@ -103,7 +104,8 @@ export const ArticlesList = () => {
     };
 
     initializeArticles();
-  }, [articles]);
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
