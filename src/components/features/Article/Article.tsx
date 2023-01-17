@@ -5,7 +5,7 @@ import { Article } from '../../types/Article';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useKeywordFilter } from '../../../state/articles.state';
 
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Button } from '@mui/material';
 import './Article.css';
 import { ArrowIcon } from '../../icons/ArrowIcon';
 import Spinner from '../../spinner/Spinner';
@@ -18,7 +18,7 @@ export const ArticleComponent = () => {
   const [article, setArticle] = useState<Article | null>(null);
   const { id }:ArticleProps = useParams();
   const navigate = useNavigate();
-  const keyword = useKeywordFilter();
+  // const keyword = useKeywordFilter();
 
   console.log(id);
 

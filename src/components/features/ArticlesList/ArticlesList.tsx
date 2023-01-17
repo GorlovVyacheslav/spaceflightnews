@@ -27,7 +27,7 @@ function LinkRouter(props: any) {
   );
 }
 
-type ArticlesListItemProps = {};
+// type ArticlesListItemProps = {};
 const ArticlesListItem = ({
   imageUrl,
   title,
