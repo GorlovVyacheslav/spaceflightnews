@@ -99,13 +99,8 @@ export const ArticlesList = () => {
   const numberOfFilteredArticles = useNumberOfFilteredArticles();
 
   useEffect(() =>  {
-    const initializeArticles = async () =>{
-      await getArticles();
-    };
-
-    initializeArticles();
-    //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+          getArticles();
+     }, []);
 
   return (
     <>
