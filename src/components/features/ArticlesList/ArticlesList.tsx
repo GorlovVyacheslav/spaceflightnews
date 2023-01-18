@@ -18,6 +18,7 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { Search } from '../Search/Search';
 import { ArrowIcon } from '../../icons/ArrowIcon';
+import { Calendar } from "../../icons/Calendar";
 
 function LinkRouter(props: any) {
   return (
@@ -51,14 +52,19 @@ const ArticlesListItem = ({
           image={imageUrl}
           alt="abyss"
         />
-        <div>{newData}</div>
+        <div className='datatime'>
+        <p className="calendar"><Calendar /></p> 
+          <p>{ newData}</p>
+         
+          
+                    </div>
 
         <CardContent>
           <Typography
             component="div"
             width={350}
-            height={58}
-            fontSize={24}
+            height={38}
+            fontSize={20}
             lineHeight={1.2}
           >
             {title}
@@ -100,7 +106,7 @@ export const ArticlesList = () => {
 
   useEffect(() =>  {
           getArticles();
-     }, []);
+     }, [getArticles]);
 
   return (
     <>

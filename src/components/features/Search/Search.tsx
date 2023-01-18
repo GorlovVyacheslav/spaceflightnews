@@ -7,6 +7,13 @@ import {
 import { ReactComponent as SearchIcon } from '../../../resources/svg/icons/search-icon.svg';
 import './Search.css'
 
+
+
+
+
+
+
+
 export const Search = () => {
   const keyword = useKeywordFilter();
   const { changeKeyword } = useSpaceFlightNewsActions();
@@ -18,11 +25,12 @@ export const Search = () => {
           <p>Filter by keywords</p>
         </h1>
       </header>
+  
      
       <div className="search-box">
         <TextField
           id="outlined-start-adornment"
-          sx={{ width: '336px',  }}
+          sx={{ width: '600px',  }}
           
           InputProps={{
             startAdornment: (
