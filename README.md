@@ -45,7 +45,7 @@ Showing an example of a custom hook will be a plus.
 Showing an example of state management will be a big plus.
 
 
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/99959d85-1539-4aa6-b2f4-ae2ecc930516/deploy-status)](https://app.netlify.com/sites/horlovspaceflightnews/deploys)
 
 # Getting Started with Create React App
 
